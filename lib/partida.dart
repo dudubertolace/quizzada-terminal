@@ -94,6 +94,10 @@ class Partida {
           } else {
             print('\nResposta incorreta!');
           }
+          print(
+            'Resposta certa: ${pergunta.indiceCerto + 1}) '
+            '${pergunta.alternativas[pergunta.indiceCerto]}',
+          );
 
           respostaValida = true;
         } on FormatException {
