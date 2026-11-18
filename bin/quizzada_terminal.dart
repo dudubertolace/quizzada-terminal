@@ -1,22 +1,45 @@
 import 'dart:io';
 
-import 'package:quizzada_terminal/jogador.dart';
+import 'package:quizzada_terminal/jogador.dart'; // ao rodar dart analyze, foi apresentado erro e sugerido importar o arquivo usando 'package: ...'
 import 'package:quizzada_terminal/partida.dart';
 
 void main() {
   print('QUIZ DE FUTEBOL');
-  print('Digite seu nome:');
 
-  final nome = stdin.readLineSync();
+  String nome = '';
 
-  if (nome == null || nome.trim().isEmpty) {
-    print('Nome inválido!');
-    return;
+  while (nome.isEmpty) {
+    print('\nDigite seu nome:');
+
+    final entrada = stdin.readLineSync();
+    nome = entrada?.trim() ?? '';
+
+    if (nome.isEmpty) {
+      print('Nome inválido! Digite novamente.');
+    }
   }
 
-  final jogador = Jogador(nome: nome.trim());
+  print('\nEscolha a dificuldade:');
+  print('1 - Somente perguntas fáceis');
+  print('2 - Somente perguntas difíceis');
+  print('3 - Todas as perguntas');
 
-  final partida = Partida.criar(jogador: jogador);
+  String filtro = '';
+
+  while (filtro != '1' && filtro != '2' && filtro != '3') {
+    print('\nSua escolha:');
+
+    final entrada = stdin.readLineSync();
+    filtro = entrada?.trim() ?? '';
+
+    if (filtro != '1' && filtro != '2' && filtro != '3') {
+      print('Opção inválida! Escolha 1, 2 ou 3.');
+    }
+  }
+
+  final jogador = Jogador(nome: nome);
+
+  final partida = Partida.criar(jogador: jogador, filtro: filtro);
 
   partida.iniciar();
 }
