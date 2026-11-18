@@ -8,7 +8,7 @@ final List<Map<String, dynamic>> dadosPerguntas = [
   {
     'texto': 'Qual o primeiro país campeão da Copa do Mundo masculina?',
     'alternativas': ['Brasil', 'Uruguai', 'Chile', 'União Soviética'],
-    'indiceCert': 1,
+    'indiceCerto': 1,
     'dificuldade': 'media',
   },
   {
