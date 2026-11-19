@@ -20,3 +20,8 @@ dart run
 ## Como adicionar perguntas
 
 Para adicionar novas perguntas, basta incluir um novo `Map` na lista `dadosPerguntas`, no arquivo `lib/dados_perguntas.dart`.
+
+## Link do vídeo 
+
+- Apresentação simples de como funciona o código
+https://drive.google.com/file/d/1Kthh0TRX7N5yoQMK29UCkH9Zwepexyu1/view?usp=sharing 
